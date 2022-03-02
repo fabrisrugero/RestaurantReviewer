@@ -54,6 +54,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="reviews" destination="KEw-AU-Yk6" id="8vD-ke-EQd"/>
                         <outlet property="searchBar" destination="IiM-Ps-rd0" id="2dF-cT-qA6"/>
                     </connections>
                 </viewController>

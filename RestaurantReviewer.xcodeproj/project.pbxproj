@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0A0BFA27D0130300DED024 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0A0BF827D0130300DED024 /* ReviewTableViewCell.swift */; };
+		2D0A0BFB27D0130300DED024 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D0A0BF927D0130300DED024 /* ReviewTableViewCell.xib */; };
 		2D5A111B27CE8E51007B7517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A111A27CE8E51007B7517 /* AppDelegate.swift */; };
 		2D5A111D27CE8E51007B7517 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A111C27CE8E51007B7517 /* SceneDelegate.swift */; };
 		2D5A111F27CE8E51007B7517 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A111E27CE8E51007B7517 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D0A0BF827D0130300DED024 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		2D0A0BF927D0130300DED024 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		2D5A111727CE8E51007B7517 /* RestaurantReviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantReviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A111A27CE8E51007B7517 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D5A111C27CE8E51007B7517 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				2D5A112827CE8E51007B7517 /* LaunchScreen.storyboard */,
 				2D5A112B27CE8E51007B7517 /* Info.plist */,
 				2D5A112327CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld */,
+				2D0A0BF827D0130300DED024 /* ReviewTableViewCell.swift */,
+				2D0A0BF927D0130300DED024 /* ReviewTableViewCell.xib */,
 			);
 			path = RestaurantReviewer;
 			sourceTree = "<group>";
@@ -129,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5A112A27CE8E51007B7517 /* LaunchScreen.storyboard in Resources */,
+				2D0A0BFB27D0130300DED024 /* ReviewTableViewCell.xib in Resources */,
 				2D5A112727CE8E51007B7517 /* Assets.xcassets in Resources */,
 				2D5A112227CE8E51007B7517 /* Main.storyboard in Resources */,
 			);
@@ -143,6 +150,7 @@
 			files = (
 				2D5A111F27CE8E51007B7517 /* ViewController.swift in Sources */,
 				2D5A112527CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld in Sources */,
+				2D0A0BFA27D0130300DED024 /* ReviewTableViewCell.swift in Sources */,
 				2D5A111B27CE8E51007B7517 /* AppDelegate.swift in Sources */,
 				2D5A111D27CE8E51007B7517 /* SceneDelegate.swift in Sources */,
 			);
