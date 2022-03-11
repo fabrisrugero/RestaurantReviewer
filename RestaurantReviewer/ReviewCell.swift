@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewTableViewCell: UITableViewCell {
+class ReviewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

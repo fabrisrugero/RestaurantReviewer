@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     let placeholders = [1,1,1,1,1,1]
     @IBOutlet weak var reviews: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -17,19 +17,33 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         reviews.dataSource = self
         reviews.rowHeight = UITableView.automaticDimension
         searchBar.searchTextField.backgroundColor = .white
-        let nib = UINib(nibName: "ReviewTableViewCell", bundle: nil)
-        reviews.register(nib, forCellReuseIdentifier: "ReviewTableViewCell")
+        let nib = UINib(nibName: "ReviewCell", bundle: nil)
+        reviews.register(nib, forCellReuseIdentifier: "ReviewCell")
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeholders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tablecell = reviews.dequeueReusableCell(withIdentifier: "ReviewTableViewCell",for:indexPath) as! ReviewTableViewCell
+        let tablecell = reviews.dequeueReusableCell(withIdentifier: "ReviewCell",for:indexPath) as! ReviewCell
         tablecell.layer.borderColor = UIColor.gray.cgColor
         tablecell.layer.borderWidth = 2
         return tablecell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showReview", sender: self)
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? DetailsViewController{
+//            destination.data = models[(tableView.indexPathForSelectedRow?.row)!]
+//        }
+    }
+    
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){
+        
+    }
 }
 

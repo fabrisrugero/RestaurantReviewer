@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D0A0BFA27D0130300DED024 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0A0BF827D0130300DED024 /* ReviewTableViewCell.swift */; };
-		2D0A0BFB27D0130300DED024 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D0A0BF927D0130300DED024 /* ReviewTableViewCell.xib */; };
+		2D0A0BFA27D0130300DED024 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0A0BF827D0130300DED024 /* ReviewCell.swift */; };
+		2D38B66827DBDE91005AE675 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D38B66727DBDE91005AE675 /* ReviewCell.xib */; };
+		2D38B66C27DBEBD9005AE675 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38B66B27DBEBD9005AE675 /* ReviewViewController.swift */; };
 		2D5A111B27CE8E51007B7517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A111A27CE8E51007B7517 /* AppDelegate.swift */; };
 		2D5A111D27CE8E51007B7517 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A111C27CE8E51007B7517 /* SceneDelegate.swift */; };
-		2D5A111F27CE8E51007B7517 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A111E27CE8E51007B7517 /* ViewController.swift */; };
+		2D5A111F27CE8E51007B7517 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A111E27CE8E51007B7517 /* ReviewsViewController.swift */; };
 		2D5A112227CE8E51007B7517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5A112027CE8E51007B7517 /* Main.storyboard */; };
 		2D5A112527CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A112327CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld */; };
 		2D5A112727CE8E51007B7517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5A112627CE8E51007B7517 /* Assets.xcassets */; };
@@ -19,12 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D0A0BF827D0130300DED024 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		2D0A0BF927D0130300DED024 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		2D0A0BF827D0130300DED024 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		2D38B66727DBDE91005AE675 /* ReviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		2D38B66B27DBEBD9005AE675 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		2D5A111727CE8E51007B7517 /* RestaurantReviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantReviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A111A27CE8E51007B7517 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D5A111C27CE8E51007B7517 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D5A111E27CE8E51007B7517 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D5A111E27CE8E51007B7517 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		2D5A112127CE8E51007B7517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D5A112427CE8E51007B7517 /* RestaurantReviewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RestaurantReviewer.xcdatamodel; sourceTree = "<group>"; };
 		2D5A112627CE8E51007B7517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,14 +66,15 @@
 			children = (
 				2D5A111A27CE8E51007B7517 /* AppDelegate.swift */,
 				2D5A111C27CE8E51007B7517 /* SceneDelegate.swift */,
-				2D5A111E27CE8E51007B7517 /* ViewController.swift */,
+				2D5A111E27CE8E51007B7517 /* ReviewsViewController.swift */,
 				2D5A112027CE8E51007B7517 /* Main.storyboard */,
 				2D5A112627CE8E51007B7517 /* Assets.xcassets */,
 				2D5A112827CE8E51007B7517 /* LaunchScreen.storyboard */,
 				2D5A112B27CE8E51007B7517 /* Info.plist */,
 				2D5A112327CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld */,
-				2D0A0BF827D0130300DED024 /* ReviewTableViewCell.swift */,
-				2D0A0BF927D0130300DED024 /* ReviewTableViewCell.xib */,
+				2D0A0BF827D0130300DED024 /* ReviewCell.swift */,
+				2D38B66727DBDE91005AE675 /* ReviewCell.xib */,
+				2D38B66B27DBEBD9005AE675 /* ReviewViewController.swift */,
 			);
 			path = RestaurantReviewer;
 			sourceTree = "<group>";
@@ -135,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5A112A27CE8E51007B7517 /* LaunchScreen.storyboard in Resources */,
-				2D0A0BFB27D0130300DED024 /* ReviewTableViewCell.xib in Resources */,
+				2D38B66827DBDE91005AE675 /* ReviewCell.xib in Resources */,
 				2D5A112727CE8E51007B7517 /* Assets.xcassets in Resources */,
 				2D5A112227CE8E51007B7517 /* Main.storyboard in Resources */,
 			);
@@ -148,9 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D5A111F27CE8E51007B7517 /* ViewController.swift in Sources */,
+				2D5A111F27CE8E51007B7517 /* ReviewsViewController.swift in Sources */,
 				2D5A112527CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld in Sources */,
-				2D0A0BFA27D0130300DED024 /* ReviewTableViewCell.swift in Sources */,
+				2D38B66C27DBEBD9005AE675 /* ReviewViewController.swift in Sources */,
+				2D0A0BFA27D0130300DED024 /* ReviewCell.swift in Sources */,
 				2D5A111B27CE8E51007B7517 /* AppDelegate.swift in Sources */,
 				2D5A111D27CE8E51007B7517 /* SceneDelegate.swift in Sources */,
 			);
