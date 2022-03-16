@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,36 +72,187 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ba-11-CmL">
-                                <rect key="frame" x="157" y="390" width="101" height="50"/>
+                                <rect key="frame" x="257" y="795" width="108" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="BACK">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                <buttonConfiguration key="configuration" style="filled" title="BACK" cornerStyle="medium">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="32"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="1v4-YR-u8b" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="t3n-1i-kNH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyZ-MF-QNL">
+                                <rect key="frame" x="52" y="795" width="93" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="EDIT" cornerStyle="medium">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="32"/>
+                                </buttonConfiguration>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nAg-AR-Rs8">
+                                <rect key="frame" x="6" y="44" width="403" height="332"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="wkZ-nv-HAZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="403" height="270"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luxembourg-map" translatesAutoresizingMaskIntoConstraints="NO" id="kRt-SV-88O">
+                                                <rect key="frame" x="0.0" y="0.0" width="403" height="214"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="214" id="Jrf-F3-YBY"/>
+                                                    <constraint firstAttribute="width" constant="403" id="aj5-tm-rAi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVi-oT-uPm">
+                                                <rect key="frame" x="0.0" y="217" width="403" height="53"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="53" id="7rA-Wd-hcj"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="GET DIRECTIONS" cornerStyle="large">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="32"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mpu-Gw-2OF" userLabel="divider">
+                                        <rect key="frame" x="0.0" y="275" width="403" height="4"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-edge" id="mcB-Tw-WYH">
+                                                <rect key="frame" x="0.0" y="0.0" width="7" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="MUh-M2-g4r">
+                                                <rect key="frame" x="7" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="vNh-lb-smL">
+                                                <rect key="frame" x="25" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="rsH-g0-rFV">
+                                                <rect key="frame" x="43" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-GS-laC">
+                                                <rect key="frame" x="61" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="HYL-CJ-cjD">
+                                                <rect key="frame" x="79" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="86E-rh-62e">
+                                                <rect key="frame" x="97" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="Uo4-Le-nYw">
+                                                <rect key="frame" x="115" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="Mty-a8-RuY">
+                                                <rect key="frame" x="133" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="lWq-lS-vFw">
+                                                <rect key="frame" x="151" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="Ih6-Vm-ddP">
+                                                <rect key="frame" x="169" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="s6x-I7-dt0">
+                                                <rect key="frame" x="187" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="w8z-he-HaK">
+                                                <rect key="frame" x="205" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-kN-0Xi">
+                                                <rect key="frame" x="223" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="ded-F8-a89">
+                                                <rect key="frame" x="241" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="Q2f-pF-3m9">
+                                                <rect key="frame" x="259" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="l5m-Fg-Tkr">
+                                                <rect key="frame" x="277" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="lDZ-3W-RSk">
+                                                <rect key="frame" x="295" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="DXe-n4-cyr">
+                                                <rect key="frame" x="313" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="qBg-Lk-Znm">
+                                                <rect key="frame" x="331" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="GNe-Tv-kkt">
+                                                <rect key="frame" x="349" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="spC-A3-dca">
+                                                <rect key="frame" x="367" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-segment" translatesAutoresizingMaskIntoConstraints="NO" id="Q5k-ww-EpW">
+                                                <rect key="frame" x="385" y="0.0" width="18" height="4"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CSo-Pk-EXe">
+                                        <rect key="frame" x="0.0" y="284" width="403" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="East West Cafe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ES-4y-APD">
+                                                <rect key="frame" x="0.0" y="0.0" width="259" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfj-dx-KGd" userLabel="social media">
+                                                <rect key="frame" x="283" y="4" width="120" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="l1v-Ds-Dgg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="bFR-41-yei">
+                                                        <rect key="frame" x="40" y="0.0" width="40" height="40"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="UCv-al-oYX">
+                                                        <rect key="frame" x="80" y="0.0" width="40" height="40"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Niz-zB-omb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nAg-AR-Rs8" firstAttribute="leading" secondItem="Niz-zB-omb" secondAttribute="leading" constant="6" id="WZI-0E-UFM"/>
+                            <constraint firstItem="nAg-AR-Rs8" firstAttribute="top" secondItem="Niz-zB-omb" secondAttribute="top" id="c4I-KU-uux"/>
+                            <constraint firstItem="Niz-zB-omb" firstAttribute="trailing" secondItem="nAg-AR-Rs8" secondAttribute="trailing" constant="5" id="uHk-a8-bcB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BPO-yB-ngA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Tu-Av-TsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1v4-YR-u8b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2971" y="76"/>
+            <point key="canvasLocation" x="2969.5652173913045" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>
+        <image name="facebook" width="40" height="35"/>
+        <image name="line-edge" width="7" height="4"/>
+        <image name="line-segment" width="18" height="4"/>
+        <image name="luxembourg-map" width="1280" height="668"/>
+        <image name="mail" width="40" height="40"/>
         <image name="three-vertical-dots-icon-small" width="12" height="44"/>
+        <image name="twitter" width="40" height="40"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
