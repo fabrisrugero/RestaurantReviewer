@@ -1,13 +1,13 @@
 //
-//  ReviewViewController.swift
+//  ReviewFormController.swift
 //  RestaurantReviewer
 //
-//  Created by Rugero Fabris on 2022-03-11.
+//  Created by Rugero Fabris on 2022-03-25.
 //
 
 import UIKit
 
-class ReviewViewController: UIViewController {
+class ReviewFormController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,5 @@ class ReviewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func editReview(_ sender: UIButton) {
-        performSegue(withIdentifier: "showForm", sender: self)
-    }
-    
+
 }

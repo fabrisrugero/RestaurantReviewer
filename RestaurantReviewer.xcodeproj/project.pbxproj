@@ -17,6 +17,7 @@
 		2D5A112527CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A112327CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld */; };
 		2D5A112727CE8E51007B7517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5A112627CE8E51007B7517 /* Assets.xcassets */; };
 		2D5A112A27CE8E51007B7517 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5A112827CE8E51007B7517 /* LaunchScreen.storyboard */; };
+		2D9D944B27EDF0C100627E56 /* ReviewFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D944A27EDF0C100627E56 /* ReviewFormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2D5A112627CE8E51007B7517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D5A112927CE8E51007B7517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D5A112B27CE8E51007B7517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D9D944A27EDF0C100627E56 /* ReviewFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				2D0A0BF827D0130300DED024 /* ReviewCell.swift */,
 				2D38B66727DBDE91005AE675 /* ReviewCell.xib */,
 				2D38B66B27DBEBD9005AE675 /* ReviewViewController.swift */,
+				2D9D944A27EDF0C100627E56 /* ReviewFormController.swift */,
 			);
 			path = RestaurantReviewer;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				2D5A111F27CE8E51007B7517 /* ReviewsViewController.swift in Sources */,
 				2D5A112527CE8E51007B7517 /* RestaurantReviewer.xcdatamodeld in Sources */,
+				2D9D944B27EDF0C100627E56 /* ReviewFormController.swift in Sources */,
 				2D38B66C27DBEBD9005AE675 /* ReviewViewController.swift in Sources */,
 				2D0A0BFA27D0130300DED024 /* ReviewCell.swift in Sources */,
 				2D5A111B27CE8E51007B7517 /* AppDelegate.swift in Sources */,
