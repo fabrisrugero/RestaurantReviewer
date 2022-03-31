@@ -34,6 +34,9 @@
                                                 <color key="backgroundColor" red="0.55409803045354056" green="0.96161335709999995" blue="0.49776129092679428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="three-vertical-dots-icon-small"/>
+                                                <connections>
+                                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aff-sK-hKe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -57,11 +60,121 @@
                         <outlet property="reviews" destination="KEw-AU-Yk6" id="8vD-ke-EQd"/>
                         <outlet property="searchBar" destination="IiM-Ps-rd0" id="2dF-cT-qA6"/>
                         <segue destination="u83-Dd-m8y" kind="presentation" identifier="showReview" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="L99-zi-LeF"/>
+                        <segue destination="VHs-lk-cxQ" kind="showDetail" identifier="showMenu" id="15a-u8-MIv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2217" y="76"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Ncy-b6-sUz">
+            <objects>
+                <viewController id="VHs-lk-cxQ" customClass="MenuViewController" customModule="RestaurantReviewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jWw-AB-eDr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d40-8w-nn6">
+                                <rect key="frame" x="43.5" y="146.5" width="327" height="549"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger 2" translatesAutoresizingMaskIntoConstraints="NO" id="0Lc-Yo-pXJ">
+                                        <rect key="frame" x="88.5" y="0.0" width="150" height="153"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yd3-Y9-Wn0">
+                                        <rect key="frame" x="0.0" y="163" width="327" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="hG5-Xv-DTR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KCr-TJ-xNv">
+                                        <rect key="frame" x="0.0" y="217" width="327" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="aEw-Ea-Ice"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn2-Zs-Sbw">
+                                        <rect key="frame" x="3" y="271" width="321" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="SIGN IN" cornerStyle="medium">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="40"/>
+                                            <directionalEdgeInsets key="contentInsets" top="7" leading="90" bottom="7" trailing="90"/>
+                                            <color key="baseBackgroundColor" red="0.36939256259999997" green="0.96161335709999995" blue="0.122725444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SignIn:" destination="VHs-lk-cxQ" eventType="touchUpInside" id="LJd-56-4Ax"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgK-I6-h6V">
+                                        <rect key="frame" x="0.0" y="343" width="327" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="CREATE REVIEW" cornerStyle="medium">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="40"/>
+                                            <color key="baseBackgroundColor" red="0.36939256259999997" green="0.96161335709999995" blue="0.122725444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="CreateReview:" destination="VHs-lk-cxQ" eventType="touchUpInside" id="CaL-eV-qNA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-JP-YF5">
+                                        <rect key="frame" x="2.5" y="415" width="322.5" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="DELETE REVIEW" cornerStyle="medium">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="40"/>
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="DeleteReview:" destination="VHs-lk-cxQ" eventType="touchUpInside" id="Ico-A8-w7P"/>
+                                            <segue destination="C4S-3c-FjG" kind="unwind" unwindAction="deleteUnwindActionWithUnwindSegue:" id="tJG-lH-X2x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUy-uD-W4Y">
+                                        <rect key="frame" x="1.5" y="487" width="324.5" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="SIGN OUT" cornerStyle="medium">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="40"/>
+                                            <directionalEdgeInsets key="contentInsets" top="7" leading="70" bottom="7" trailing="70"/>
+                                            <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SignOut:" destination="VHs-lk-cxQ" eventType="touchUpInside" id="q4S-cd-v2f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76631386128346779" green="0.96161335709999995" blue="0.75049392963036277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yd3-Y9-Wn0" secondAttribute="trailing" id="E1e-Fx-kYs"/>
+                                    <constraint firstItem="yd3-Y9-Wn0" firstAttribute="leading" secondItem="d40-8w-nn6" secondAttribute="leading" id="OdG-j2-M5f"/>
+                                    <constraint firstItem="KCr-TJ-xNv" firstAttribute="leading" secondItem="d40-8w-nn6" secondAttribute="leading" id="awo-tm-44j"/>
+                                    <constraint firstAttribute="trailing" secondItem="KCr-TJ-xNv" secondAttribute="trailing" id="zbx-RI-Rj1"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1xV-mD-cei"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d40-8w-nn6" firstAttribute="centerY" secondItem="jWw-AB-eDr" secondAttribute="centerY" id="00b-JT-xno"/>
+                            <constraint firstItem="d40-8w-nn6" firstAttribute="centerX" secondItem="jWw-AB-eDr" secondAttribute="centerX" id="aVf-jW-RRB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createReviewBtn" destination="QgK-I6-h6V" id="snK-Ps-rPO"/>
+                        <outlet property="deleteReviewBtn" destination="0Nn-JP-YF5" id="s8K-St-nvG"/>
+                        <outlet property="passwordTxb" destination="KCr-TJ-xNv" id="ST8-zX-URr"/>
+                        <outlet property="signInBtn" destination="Mn2-Zs-Sbw" id="zRx-Ho-y87"/>
+                        <outlet property="signOutBtn" destination="cUy-uD-W4Y" id="cNG-39-tZB"/>
+                        <outlet property="usernameTxb" destination="yd3-Y9-Wn0" id="dJC-8c-UzQ"/>
+                        <segue destination="woI-I6-8I7" kind="show" identifier="createForm" id="eFp-HX-V7Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZ1-8f-g3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="C4S-3c-FjG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2970" y="803"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="yzH-Fx-7Ci">
@@ -733,7 +846,7 @@
                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="32"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="1v4-YR-u8b" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="t3n-1i-kNH"/>
+                                                    <segue destination="1v4-YR-u8b" kind="unwind" unwindAction="closeUnwindActionWithUnwindSegue:" id="3bH-PU-dK9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -751,7 +864,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BPO-yB-ngA"/>
                     <connections>
-                        <segue destination="woI-I6-8I7" kind="show" identifier="showForm" id="Q6i-Rm-oxl"/>
+                        <segue destination="woI-I6-8I7" kind="show" identifier="editForm" id="Q6i-Rm-oxl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Tu-Av-TsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1022,6 +1135,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="SAVE" cornerStyle="medium">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="32"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Eae-cb-BY2" kind="unwind" unwindAction="saveUnwindActionWithUnwindSegue:" id="OtX-Qh-F0r"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwT-pT-IwW">
                                                 <rect key="frame" x="240.5" y="0.0" width="150.5" height="52.5"/>
@@ -1030,6 +1146,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="CLOSE" cornerStyle="medium">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="32"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Eae-cb-BY2" kind="unwind" unwindAction="closeUnwindActionWithUnwindSegue:" id="cS0-w6-Kln"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1053,10 +1172,14 @@
                     <navigationItem key="navigationItem" id="jiW-rU-zAc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39J-gY-un1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Eae-cb-BY2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3771.0144927536235" y="75.669642857142847"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eFp-HX-V7Z"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Star 1" width="40" height="34"/>
         <image name="Star 3" width="40" height="34"/>

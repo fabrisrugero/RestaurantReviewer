@@ -42,7 +42,15 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
 //        }
     }
     
-    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){
+    @IBAction func showMenu(_ sender: UIButton) {
+        performSegue(withIdentifier: "showMenu", sender: self)
+    }
+    
+    @IBAction func closeUnwindAction(unwindSegue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func deleteUnwindAction(unwindSegue: UIStoryboardSegue){
         
     }
 }
