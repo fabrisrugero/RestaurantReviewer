@@ -28,10 +28,6 @@ class MenuViewController: UIViewController {
         signedOut(signedIn: false)
     }
     
-    @IBAction func CreateReview(_ sender: UIButton) {
-        performSegue(withIdentifier: "createForm", sender: self)
-    }
-    
     @IBAction func DeleteReview(_ sender: UIButton) {
         
     }

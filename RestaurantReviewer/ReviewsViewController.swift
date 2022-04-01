@@ -8,7 +8,7 @@
 import UIKit
 
 class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-    let placeholders = [1,1,1,1,1,1]
+    var placeholders = [1,1,1,1,1,1]
     @IBOutlet weak var reviews: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
@@ -34,7 +34,26 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showReview", sender: self)
     }
-
+    // Override to support conditional editing of the table view.
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        // Return `false` if you do not want the
+        //  specified item to be editable.
+        return true
+    }
+    // Override to support editing the table view.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            placeholders.remove(at: indexPath.row)
+            // Then, delete the row from the table itself
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.green // Your color here!
+    }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let destination = segue.destination as? DetailsViewController{
@@ -43,15 +62,20 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
     @IBAction func showMenu(_ sender: UIButton) {
-        performSegue(withIdentifier: "showMenu", sender: self)
+        if(reviews.isEditing){
+            reviews.isEditing = false}
+        else{
+            performSegue(withIdentifier: "showMenu", sender: self)}
     }
-    
     @IBAction func closeUnwindAction(unwindSegue: UIStoryboardSegue){
         
     }
+    @IBAction func createUnwindAction(unwindSegue: UIStoryboardSegue){
+    
+    }
     
     @IBAction func deleteUnwindAction(unwindSegue: UIStoryboardSegue){
-        
+        reviews.isEditing = true
     }
 }
 
