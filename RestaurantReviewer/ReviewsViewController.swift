@@ -40,20 +40,21 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
         performSegue(withIdentifier: "showReview", sender: self)
     }
     // Override to support conditional editing of the table view.
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool{
         // Return `false` if you do not want the
         //  specified item to be editable.
         return true
     }
     // Override to support editing the table view.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
         if editingStyle == .delete {
+            let review:Restuarant = reviewmodels[indexPath.row]
+            if(self.deleteReview(restuarant: review)){
             // Delete the row from the data source
             reviewmodels.remove(at: indexPath.row)
             // Then, delete the row from the table itself
             tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -61,9 +62,9 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? DetailsViewController{
-//            destination.data = models[(tableView.indexPathForSelectedRow?.row)!]
-//        }
+        if let destination = segue.destination as? ReviewViewController{
+            destination.review = reviewmodels[(reviews.indexPathForSelectedRow?.row)!]
+        }
     }
     
     @IBAction func showMenu(_ sender: UIButton) {
@@ -78,8 +79,9 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
     @IBAction func createUnwindAction(unwindSegue: UIStoryboardSegue){
         let newReview = Restuarant(context: context)
         newReview.name = "East West Cafe"
-        newReview.address = "12 st Andrews Street London M6M5E2 ON Canada"
+        newReview.address = "12 st Andrews St London M6M5E2 ON Canada"
         newReview.contact = "+1 (234) 567 8910"
+        newReview.price = "$20.50 - 50.50"
         newReview.url = "www.eastcafe.ca"
         newReview.tags = "meaty;vegan;vegetarian;well-rounded;cook-out"
         newReview.hours = "11am - 10pm"
@@ -109,12 +111,13 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
         }
     }
     
-    func deleteReview(restuarant: Restuarant)  {
+    func deleteReview(restuarant: Restuarant) -> Bool {
         context.delete(restuarant)
         do {
             try context.save()
+            return true
         } catch  {
-            
+            return false
         }
     }
 }
