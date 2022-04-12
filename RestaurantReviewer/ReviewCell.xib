@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,6 +40,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                        <connections>
+                                            <action selector="firststarclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qcX-HZ-y9T"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U2-wS-DRz">
                                         <rect key="frame" x="42" y="0.0" width="42" height="37"/>
@@ -48,6 +51,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                        <connections>
+                                            <action selector="secondstarclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nMI-UY-c8u"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X2-hQ-xdD">
                                         <rect key="frame" x="84" y="0.0" width="42" height="37"/>
@@ -56,6 +62,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                        <connections>
+                                            <action selector="thirdstarclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LxR-sn-VP5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwJ-F5-Hj8">
                                         <rect key="frame" x="126" y="0.0" width="42" height="37"/>
@@ -64,6 +73,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                        <connections>
+                                            <action selector="fourthstarclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rPI-2a-QmJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zug-PU-Ipj">
                                         <rect key="frame" x="168" y="0.0" width="42" height="37"/>
@@ -72,6 +84,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                        <connections>
+                                            <action selector="fifthstarclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CfJ-1x-FU7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -90,6 +105,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="fifthstar" destination="zug-PU-Ipj" id="4Z5-cU-1b7"/>
+                <outlet property="firststar" destination="rgi-pp-stZ" id="RH6-qz-eWP"/>
+                <outlet property="fourthstar" destination="WwJ-F5-Hj8" id="kQq-le-gAi"/>
+                <outlet property="reviewname" destination="hIA-c5-Ler" id="lCc-4B-dnN"/>
+                <outlet property="secondstar" destination="2U2-wS-DRz" id="ymQ-21-txt"/>
+                <outlet property="thirdstar" destination="2X2-hQ-xdD" id="n4h-bs-Yrs"/>
+            </connections>
             <point key="canvasLocation" x="133" y="113"/>
         </tableViewCell>
     </objects>
