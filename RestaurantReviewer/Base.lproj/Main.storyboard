@@ -867,12 +867,19 @@
                     <connections>
                         <outlet property="address1" destination="s2W-1B-UCI" id="Tqw-tW-vpM"/>
                         <outlet property="address2" destination="JnW-EA-jrY" id="Qf0-hJ-7Ti"/>
+                        <outlet property="greentag" destination="C9x-P4-8ZJ" id="zO0-gC-yoW"/>
+                        <outlet property="greytag" destination="j1V-lO-soV" id="i93-Yy-b7q"/>
                         <outlet property="hours" destination="JSf-tw-hIn" id="u7m-rY-nwM"/>
                         <outlet property="info" destination="89e-rZ-qML" id="a4b-wN-74l"/>
                         <outlet property="name" destination="6ES-4y-APD" id="CSC-Tr-zVV"/>
+                        <outlet property="orangetag" destination="Hgx-SX-ENN" id="TAo-Ii-CAP"/>
                         <outlet property="phone" destination="VdR-KM-Ady" id="yQQ-9C-mqn"/>
                         <outlet property="price" destination="bV4-5U-gNm" id="roV-iu-vWZ"/>
+                        <outlet property="purpletag" destination="1o3-Ub-txB" id="vXG-tm-u5v"/>
+                        <outlet property="redtag" destination="ocB-TY-9vU" id="odi-ot-W1x"/>
                         <outlet property="url" destination="X3e-Jm-BPl" id="EfM-ds-fN4"/>
+                        <outlet property="violettag" destination="TOw-YK-bc0" id="2nn-z4-p8K"/>
+                        <outlet property="yellowtag" destination="AH8-yF-2bE" id="oJg-sp-oLE"/>
                         <segue destination="woI-I6-8I7" kind="show" identifier="editForm" id="Q6i-Rm-oxl"/>
                     </connections>
                 </viewController>

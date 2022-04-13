@@ -74,7 +74,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
             performSegue(withIdentifier: "showMenu", sender: self)}
     }
     @IBAction func closeUnwindAction(unwindSegue: UIStoryboardSegue){
-        
+        getAllReviews()
     }
     @IBAction func createUnwindAction(unwindSegue: UIStoryboardSegue){
         let newReview = Restuarant(context: context)
@@ -83,7 +83,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
         newReview.contact = "+1 (234) 567 8910"
         newReview.price = "$20.50 - 50.50"
         newReview.url = "www.eastcafe.ca"
-        newReview.tags = "meaty;vegan;vegetarian;well-rounded;cook-out"
+        newReview.tags = "Meaty;Vegan;Vegetarian;Well-rounded;Cook-out"
         newReview.hours = "11am - 10pm"
         newReview.info = "Japanese cuisine"
         newReview.review = 3
