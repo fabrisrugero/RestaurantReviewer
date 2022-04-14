@@ -102,6 +102,7 @@ class ReviewViewController: UIViewController {
             let tagsArr = tags.components(separatedBy: ";")
             var text: String = tagsArr.count > 0 ? tagsArr[0].prefix(5).description : ""
             if(text != ""){
+                redtag.tintColor = UIColor.red
                 redtag.setTitle(text, for: .normal)
                 redtag.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
@@ -109,12 +110,13 @@ class ReviewViewController: UIViewController {
                     return outgoing
                    }
             }else{
-                redtag.backgroundColor = UIColor.white
+                redtag.tintColor = UIColor.white
             }
             
             text = tagsArr.count > 1 ? tagsArr[1].prefix(5).description : ""
             if(text != ""){
                 violettag.setTitle(text, for: .normal)
+                violettag.tintColor = UIColor.systemIndigo
                 violettag.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
                     outgoing.font = UIFont.systemFont(ofSize: 25)
@@ -122,11 +124,12 @@ class ReviewViewController: UIViewController {
                    }
                 
             }else{
-                violettag.backgroundColor = UIColor.white
+                violettag.tintColor = UIColor.white
             }
             
             text = tagsArr.count > 2 ? tagsArr[2].prefix(10).description : ""
             if(text != ""){
+                greentag.tintColor = UIColor.green
                 greentag.setTitle(text, for: .normal)
                 greentag.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
@@ -134,11 +137,12 @@ class ReviewViewController: UIViewController {
                     return outgoing
                    }
             }else{
-                greytag.backgroundColor = UIColor.white
+                greentag.tintColor = UIColor.white
             }
             
             text = tagsArr.count > 3 ? tagsArr[3].prefix(12).description : ""
             if(text != ""){
+                orangetag.tintColor = UIColor.orange
                 orangetag.setTitle(text, for: .normal)
                 orangetag.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
@@ -146,11 +150,12 @@ class ReviewViewController: UIViewController {
                     return outgoing
                    }
             }else{
-                orangetag.backgroundColor = UIColor.white
+                orangetag.tintColor = UIColor.white
             }
             
             text = tagsArr.count > 4 ? tagsArr[4].prefix(5).description : ""
             if(text != ""){
+                purpletag.tintColor = UIColor.purple
                 purpletag.setTitle(text, for: .normal)
                 purpletag.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
@@ -158,11 +163,12 @@ class ReviewViewController: UIViewController {
                     return outgoing
                    }
             }else{
-                purpletag.backgroundColor = UIColor.white
+                purpletag.tintColor = UIColor.white
             }
             
             text = tagsArr.count > 5 ? tagsArr[5].prefix(5).description : ""
             if(text != ""){
+                yellowtag.tintColor = UIColor.yellow
                 yellowtag.setTitle(text, for: .normal)
                 yellowtag.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
@@ -170,19 +176,20 @@ class ReviewViewController: UIViewController {
                     return outgoing
                    }
             }else{
-                yellowtag.backgroundColor = UIColor.white
+                yellowtag.tintColor = UIColor.white
             }
             
             text = tagsArr.count > 6 ? tagsArr[7].prefix(5).description : ""
             if(text != ""){
                 greytag.setTitle(text, for: .normal)
+                greytag.tintColor = UIColor.systemGray
                 greytag.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
                     outgoing.font = UIFont.systemFont(ofSize: 25)
                     return outgoing
                    }
             }else{
-                greytag.backgroundColor = UIColor.white
+                greytag.tintColor = UIColor.white
             }
         }
     }

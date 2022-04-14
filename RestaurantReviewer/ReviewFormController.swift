@@ -28,6 +28,22 @@ class ReviewFormController: UIViewController {
     @IBOutlet weak var firststar: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFieldsDelegate()
+        loadReview()
+    }
+    
+    func setFieldsDelegate()  {
+        url.delegate = self
+        name.delegate = self
+        info.delegate = self
+        tags1.delegate = self
+        price.delegate = self
+        hours.delegate = self
+        contact.delegate = self
+        address1.delegate = self
+    }
+    
+    func loadReview()  {
         if let unwrappedreview = review {
             url.text = unwrappedreview.url
             name.text = unwrappedreview.name
@@ -35,6 +51,7 @@ class ReviewFormController: UIViewController {
             price.text = unwrappedreview.price
             hours.text = unwrappedreview.hours
             contact.text = unwrappedreview.contact
+            loadRating(review: Int(unwrappedreview.review))
             if let addr = unwrappedreview.address {
               address1.text = splitText(text: addr, prefix: true)
               address2.text = splitText(text: addr, prefix: false)
@@ -56,15 +73,96 @@ class ReviewFormController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var savebtn: UIButton!
+    @IBAction func saveReview(_ sender: UIButton) {
+        if let _ = contact.text!.range(of: #"^\(\d{3}\)\s\d{3}-\d{4}"#,
+                                         options: .regularExpression) {
+            performSegue(withIdentifier: "saveForm", sender: sender)
+        } else {
+        
+        let alert = UIAlertController(title: "Formart Error",
+                                      message: "Phone format is (###) ### ####",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        present(alert, animated: true)
+        }
     }
-    */
-
+    
+    func loadRating(review: Int) {
+        switch review {
+        case 1:
+            firststarclick(firststar)
+        case 2:
+            secondstarclick(secondstar)
+        case 3:
+            thirdstarclick(thirdstar)
+        case 4:
+            fourthstarclick(fourthstar)
+        case 5:
+            fifthstarclick(fifthstar)
+        default:
+            firststar.setImage(UIImage(named: "Star 3"), for: .normal)
+            secondstar.setImage(UIImage(named: "Star 3"), for: .normal)
+            thirdstar.setImage(UIImage(named: "Star 3"), for: .normal)
+            fourthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+            fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+        }
+    }
+    
+    @IBAction func firststarclick(_ sender: UIButton) {
+        review?.review = 1
+        firststar.setImage(UIImage(named: "Star 1"), for: .normal)
+        secondstar.setImage(UIImage(named: "Star 3"), for: .normal)
+        thirdstar.setImage(UIImage(named: "Star 3"), for: .normal)
+        fourthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+        fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+    }
+    @IBAction func secondstarclick(_ sender: UIButton) {
+        review?.review = 2
+        firststar.setImage(UIImage(named: "Star 1"), for: .normal)
+        secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        thirdstar.setImage(UIImage(named: "Star 3"), for: .normal)
+        fourthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+        fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+    }
+    @IBAction func thirdstarclick(_ sender: UIButton) {
+        review?.review = 3
+        firststar.setImage(UIImage(named: "Star 1"), for: .normal)
+        secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        thirdstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        fourthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+        fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+    }
+    @IBAction func fourthstarclick(_ sender: UIButton) {
+        review?.review = 4
+        firststar.setImage(UIImage(named: "Star 1"), for: .normal)
+        secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        thirdstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        fourthstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
+    }
+    @IBAction func fifthstarclick(_ sender: UIButton) {
+        review?.review = 5
+        firststar.setImage(UIImage(named: "Star 1"), for: .normal)
+        secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        thirdstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        fourthstar.setImage(UIImage(named: "Star 1"), for: .normal)
+        fifthstar.setImage(UIImage(named: "Star 1"), for: .normal)
+    }
 }
+
+extension ReviewFormController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if url.text!.isEmpty || name.text!.isEmpty || info.text!.isEmpty
+            || tags1.text!.isEmpty || price.text!.isEmpty || hours.text!.isEmpty || address1.text!.isEmpty {
+            savebtn.isEnabled = false
+        }
+        else {
+            savebtn.isEnabled = true
+        }
+    }
+}
+
+
+
+

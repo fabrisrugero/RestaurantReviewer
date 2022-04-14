@@ -678,6 +678,7 @@
                                                         <buttonConfiguration key="configuration" style="filled" title="Meaty" cornerStyle="capsule">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                             <directionalEdgeInsets key="contentInsets" top="2" leading="41" bottom="2" trailing="41"/>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOw-YK-bc0">
@@ -687,6 +688,7 @@
                                                         <buttonConfiguration key="configuration" style="filled" title="Vegan" cornerStyle="capsule">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                             <directionalEdgeInsets key="contentInsets" top="2" leading="41" bottom="2" trailing="41"/>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
@@ -703,6 +705,7 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Vegetarian" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                     <directionalEdgeInsets key="contentInsets" top="2" leading="20" bottom="2" trailing="20"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgx-SX-ENN">
@@ -712,6 +715,7 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Well-Rounded" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                     <directionalEdgeInsets key="contentInsets" top="2" leading="20" bottom="2" trailing="20"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
@@ -726,11 +730,12 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Sweet" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                     <directionalEdgeInsets key="contentInsets" top="2" leading="30" bottom="2" trailing="30"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-yF-2bE">
                                                 <rect key="frame" x="135.5" y="0.0" width="132" height="34"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
@@ -740,7 +745,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1V-lO-soV">
                                                 <rect key="frame" x="271.5" y="0.0" width="131.5" height="34"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="systemGrayColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
@@ -925,26 +930,41 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="48"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                                                <connections>
+                                                                    <action selector="firststarclick:" destination="woI-I6-8I7" eventType="touchUpInside" id="oJD-Id-9TU"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="040-VV-QZT">
                                                                 <rect key="frame" x="64" y="0.0" width="64" height="48"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                                                <connections>
+                                                                    <action selector="secondstarclick:" destination="woI-I6-8I7" eventType="touchUpInside" id="fwa-mE-Fy8"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIV-oK-EwS">
                                                                 <rect key="frame" x="128" y="0.0" width="64" height="48"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="Star 1"/>
+                                                                <connections>
+                                                                    <action selector="thirdstarclick:" destination="woI-I6-8I7" eventType="touchUpInside" id="CE9-G1-GQk"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exO-Bh-mia">
                                                                 <rect key="frame" x="192" y="0.0" width="64" height="48"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="Star 3"/>
+                                                                <connections>
+                                                                    <action selector="fourthstarclick:" destination="woI-I6-8I7" eventType="touchUpInside" id="hCr-om-2gR"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxw-3n-b3r">
                                                                 <rect key="frame" x="256" y="0.0" width="64" height="48"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="Star 3"/>
+                                                                <connections>
+                                                                    <action selector="fifthstarclick:" destination="woI-I6-8I7" eventType="touchUpInside" id="s0Z-GP-Fus"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1207,7 +1227,7 @@
                                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="32"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="Eae-cb-BY2" kind="unwind" unwindAction="saveUnwindActionWithUnwindSegue:" id="DVH-5I-z8w"/>
+                                                            <action selector="saveReview:" destination="woI-I6-8I7" eventType="touchUpInside" id="gjm-mg-o83"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwT-pT-IwW">
@@ -1262,11 +1282,13 @@
                         <outlet property="info" destination="WHe-we-NdF" id="rfk-vH-dco"/>
                         <outlet property="name" destination="tNe-nF-yET" id="uLO-rz-8lh"/>
                         <outlet property="price" destination="gpn-3A-FQs" id="gy3-nF-dOq"/>
+                        <outlet property="savebtn" destination="ZET-SC-061" id="aTr-Oj-Rk5"/>
                         <outlet property="secondstar" destination="040-VV-QZT" id="vVK-5u-OxV"/>
                         <outlet property="tags1" destination="JFX-ef-Xlb" id="1fM-FP-CJ2"/>
                         <outlet property="tags2" destination="wez-e4-C16" id="uw0-DI-nf0"/>
                         <outlet property="thirdstar" destination="eIV-oK-EwS" id="4gN-9h-BPc"/>
                         <outlet property="url" destination="pAF-Zi-1cP" id="U6G-hV-M7j"/>
+                        <segue destination="Eae-cb-BY2" kind="unwind" identifier="saveForm" unwindAction="saveUnwindActionWithUnwindSegue:" id="iZ7-lk-hT4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39J-gY-un1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1293,6 +1315,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
