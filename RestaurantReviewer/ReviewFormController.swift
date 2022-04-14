@@ -8,8 +8,11 @@
 import UIKit
 
 class ReviewFormController: UIViewController {
+    var rating: Int = 0
     var review: Restuarant?
     let maxcharonline: Int = 20
+    var unwindSaveSegue: String?
+    var unwindCancelSegue: String?
     @IBOutlet weak var url: UITextField!
     @IBOutlet weak var info: UITextField!
     @IBOutlet weak var name: UITextField!
@@ -17,7 +20,6 @@ class ReviewFormController: UIViewController {
     @IBOutlet weak var contact: UITextField!
     @IBOutlet weak var address1: UITextField!
     @IBOutlet weak var address2: UITextField!
-    
     @IBOutlet weak var tags2: UITextField!
     @IBOutlet weak var tags1: UITextField!
     @IBOutlet weak var price: UITextField!
@@ -27,6 +29,7 @@ class ReviewFormController: UIViewController {
     @IBOutlet weak var secondstar: UIButton!
     @IBOutlet weak var firststar: UIButton!
     override func viewDidLoad() {
+        savebtn.isEnabled = false
         super.viewDidLoad()
         setFieldsDelegate()
         loadReview()
@@ -77,7 +80,7 @@ class ReviewFormController: UIViewController {
     @IBAction func saveReview(_ sender: UIButton) {
         if let _ = contact.text!.range(of: #"^\(\d{3}\)\s\d{3}-\d{4}"#,
                                          options: .regularExpression) {
-            performSegue(withIdentifier: "saveForm", sender: sender)
+            performSegue(withIdentifier: unwindSaveSegue!, sender: sender)
         } else {
         
         let alert = UIAlertController(title: "Formart Error",
@@ -88,6 +91,9 @@ class ReviewFormController: UIViewController {
         }
     }
     
+    @IBAction func cancelClicked(_ sender: Any) {
+        performSegue(withIdentifier: unwindCancelSegue!, sender: sender)
+    }
     func loadRating(review: Int) {
         switch review {
         case 1:
@@ -110,7 +116,7 @@ class ReviewFormController: UIViewController {
     }
     
     @IBAction func firststarclick(_ sender: UIButton) {
-        review?.review = 1
+        rating = 1
         firststar.setImage(UIImage(named: "Star 1"), for: .normal)
         secondstar.setImage(UIImage(named: "Star 3"), for: .normal)
         thirdstar.setImage(UIImage(named: "Star 3"), for: .normal)
@@ -118,7 +124,7 @@ class ReviewFormController: UIViewController {
         fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
     }
     @IBAction func secondstarclick(_ sender: UIButton) {
-        review?.review = 2
+        rating = 2
         firststar.setImage(UIImage(named: "Star 1"), for: .normal)
         secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
         thirdstar.setImage(UIImage(named: "Star 3"), for: .normal)
@@ -126,7 +132,7 @@ class ReviewFormController: UIViewController {
         fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
     }
     @IBAction func thirdstarclick(_ sender: UIButton) {
-        review?.review = 3
+        rating = 3
         firststar.setImage(UIImage(named: "Star 1"), for: .normal)
         secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
         thirdstar.setImage(UIImage(named: "Star 1"), for: .normal)
@@ -134,7 +140,7 @@ class ReviewFormController: UIViewController {
         fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
     }
     @IBAction func fourthstarclick(_ sender: UIButton) {
-        review?.review = 4
+        rating = 4
         firststar.setImage(UIImage(named: "Star 1"), for: .normal)
         secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
         thirdstar.setImage(UIImage(named: "Star 1"), for: .normal)
@@ -142,7 +148,7 @@ class ReviewFormController: UIViewController {
         fifthstar.setImage(UIImage(named: "Star 3"), for: .normal)
     }
     @IBAction func fifthstarclick(_ sender: UIButton) {
-        review?.review = 5
+        rating = 5
         firststar.setImage(UIImage(named: "Star 1"), for: .normal)
         secondstar.setImage(UIImage(named: "Star 1"), for: .normal)
         thirdstar.setImage(UIImage(named: "Star 1"), for: .normal)

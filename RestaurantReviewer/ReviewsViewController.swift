@@ -77,21 +77,24 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
         getAllReviews()
     }
     @IBAction func createUnwindAction(unwindSegue: UIStoryboardSegue){
+        if let source = unwindSegue.source as? ReviewFormController{
         let newReview = Restuarant(context: context)
-        newReview.name = "East West Cafe"
-        newReview.address = "12 st Andrews St London M6M5E2 ON Canada"
-        newReview.contact = "+1 (234) 567 8910"
-        newReview.price = "$20.50 - 50.50"
-        newReview.url = "www.eastcafe.ca"
-        newReview.tags = "Meaty;Vegan;Vegetarian;Well-rounded;Cook-out"
-        newReview.hours = "11am - 10pm"
-        newReview.info = "Japanese cuisine"
-        newReview.review = 3
-        do {
-            try context.save()
-            getAllReviews()
-        } catch  {
+            newReview.url = source.url.text
+            newReview.name = source.name.text
+            newReview.info = source.info.text
+            newReview.price = source.price.text
+            newReview.hours = source.hours.text
+            newReview.contact = source.contact.text
+            newReview.review = Int16(source.rating)
+            newReview.address = [source.address1.text, source.address2.text].compactMap { $0 }.joined(separator: "")
+            newReview.tags = [source.tags1.text, source.tags2.text].compactMap { $0 }.joined(separator: "")
             
+            do {
+                try context.save()
+                getAllReviews()
+            } catch let nserror as NSError{
+                print("ERROR: Coredata error \(nserror)")
+            }
         }
     }
     
@@ -106,8 +109,8 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
                 self.reviews.reloadData()
             }
             
-        } catch  {
-            
+        } catch let nserror as NSError{
+            print("ERROR: Coredata error \(nserror)")
         }
     }
     
@@ -116,7 +119,8 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
         do {
             try context.save()
             return true
-        } catch  {
+        }catch let nserror as NSError{
+            print("ERROR: Coredata error \(nserror)")
             return false
         }
     }

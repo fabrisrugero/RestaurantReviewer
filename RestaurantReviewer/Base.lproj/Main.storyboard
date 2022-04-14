@@ -119,7 +119,7 @@
                                             <color key="baseBackgroundColor" red="0.36939256259999997" green="0.96161335709999995" blue="0.122725444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="C4S-3c-FjG" kind="unwind" unwindAction="createUnwindActionWithUnwindSegue:" id="rU6-OS-qeB"/>
+                                            <action selector="createReview:" destination="VHs-lk-cxQ" eventType="touchUpInside" id="IW9-5P-TIQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-JP-YF5">
@@ -130,7 +130,6 @@
                                             <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="DeleteReview:" destination="VHs-lk-cxQ" eventType="touchUpInside" id="Ico-A8-w7P"/>
                                             <segue destination="C4S-3c-FjG" kind="unwind" unwindAction="deleteUnwindActionWithUnwindSegue:" id="tJG-lH-X2x"/>
                                         </connections>
                                     </button>
@@ -170,6 +169,7 @@
                         <outlet property="signInBtn" destination="Mn2-Zs-Sbw" id="zRx-Ho-y87"/>
                         <outlet property="signOutBtn" destination="cUy-uD-W4Y" id="cNG-39-tZB"/>
                         <outlet property="usernameTxb" destination="yd3-Y9-Wn0" id="dJC-8c-UzQ"/>
+                        <segue destination="woI-I6-8I7" kind="presentation" identifier="createForm" id="mOJ-rm-27c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZ1-8f-g3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1238,7 +1238,7 @@
                                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="32"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="Eae-cb-BY2" kind="unwind" unwindAction="cancelUnwindActionWithUnwindSegue:" id="GSm-dY-Z8b"/>
+                                                            <action selector="cancelClicked:" destination="woI-I6-8I7" eventType="touchUpInside" id="iz7-bF-Vch"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1288,7 +1288,10 @@
                         <outlet property="tags2" destination="wez-e4-C16" id="uw0-DI-nf0"/>
                         <outlet property="thirdstar" destination="eIV-oK-EwS" id="4gN-9h-BPc"/>
                         <outlet property="url" destination="pAF-Zi-1cP" id="U6G-hV-M7j"/>
-                        <segue destination="Eae-cb-BY2" kind="unwind" identifier="saveForm" unwindAction="saveUnwindActionWithUnwindSegue:" id="iZ7-lk-hT4"/>
+                        <segue destination="Eae-cb-BY2" kind="unwind" identifier="saveEdit" unwindAction="saveUnwindActionWithUnwindSegue:" id="iZ7-lk-hT4"/>
+                        <segue destination="Eae-cb-BY2" kind="unwind" identifier="saveCreate" unwindAction="createUnwindActionWithUnwindSegue:" id="aUt-m1-kq0"/>
+                        <segue destination="Eae-cb-BY2" kind="unwind" identifier="cancelEdit" unwindAction="cancelUnwindActionWithUnwindSegue:" id="jyF-dc-lt6"/>
+                        <segue destination="Eae-cb-BY2" kind="unwind" identifier="cancelCreate" unwindAction="kancelUnwindActionWithUnwindSegue:" id="bx6-Tf-JD9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39J-gY-un1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1297,6 +1300,9 @@
             <point key="canvasLocation" x="2969.5652173913045" y="778.79464285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mOJ-rm-27c"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Star 1" width="40" height="34"/>
         <image name="Star 3" width="40" height="34"/>

@@ -28,8 +28,8 @@ class MenuViewController: UIViewController {
         signedOut(signedIn: false)
     }
     
-    @IBAction func DeleteReview(_ sender: UIButton) {
-        
+    @IBAction func createReview(_ sender: UIButton) {
+        performSegue(withIdentifier: "createForm", sender: self)
     }
     
     func signedOut(signedIn: Bool) {
@@ -40,15 +40,15 @@ class MenuViewController: UIViewController {
         createReviewBtn.isHidden = !signedIn
         deleteReviewBtn.isHidden = !signedIn
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func kancelUnwindAction(unwindSegue: UIStoryboardSegue){
+        
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ReviewFormController{
+            destination.unwindSaveSegue = "saveCreate"
+            destination.unwindCancelSegue = "cancelCreate"
+        }
+    }
 
 }

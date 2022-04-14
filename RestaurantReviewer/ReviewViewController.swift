@@ -50,6 +50,8 @@ class ReviewViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ReviewFormController{
             destination.review = review
+            destination.unwindSaveSegue = "saveEdit"
+            destination.unwindCancelSegue = "cancelEdit"
         }
     }
 
@@ -81,15 +83,15 @@ class ReviewViewController: UIViewController {
                 unwrappedreview.price = price.text
                 unwrappedreview.hours = hours.text
                 unwrappedreview.contact = phone.text
+                unwrappedreview.review = Int16(source.rating)
                 unwrappedreview.address = [address1.text, address2.text].compactMap { $0 }.joined(separator: "")
                 unwrappedreview.tags = [source.tags1.text, source.tags2.text].compactMap { $0 }.joined(separator: "")
             }
             do {
                 try context.save()
-            } catch  {
-                
+            } catch let nserror as NSError{
+                print("ERROR: Coredata error \(nserror)")
             }
-            
         }
     }
     
