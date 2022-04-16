@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate {
     var reviewmodels = [Restuarant]()
     @IBOutlet weak var reviews: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -25,6 +26,18 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviewmodels.count
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let query = searchBar.text{
+            if(!query.isEmpty)
+            {getfilteredReviews(query)}
+            else {getAllReviews()}
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+         if searchText.isEmpty { getAllReviews() }
+     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reviewmodel = reviewmodels[indexPath.row]
@@ -74,7 +87,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
             performSegue(withIdentifier: "showMenu", sender: self)}
     }
     @IBAction func closeUnwindAction(unwindSegue: UIStoryboardSegue){
-        getAllReviews()
+        searchBarSearchButtonClicked(searchBar)
     }
     @IBAction func createUnwindAction(unwindSegue: UIStoryboardSegue){
         if let source = unwindSegue.source as? ReviewFormController{
@@ -105,6 +118,23 @@ class ReviewsViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func getAllReviews()  {
         do {
             reviewmodels = try context.fetch(Restuarant.fetchRequest())
+            DispatchQueue.main.async {
+                self.reviews.reloadData()
+            }
+            
+        } catch let nserror as NSError{
+            print("ERROR: Coredata error \(nserror)")
+        }
+    }
+    
+    func getfilteredReviews(_ query:String)  {
+        do {
+            var format = "(name contains[cd] $query) "
+            format += " or (tags contains[cd] $query) "
+            let predicate = NSPredicate(format:  format)
+            let request = Restuarant.fetchRequest() as NSFetchRequest<Restuarant>
+            request.predicate =  predicate.withSubstitutionVariables(["query":query])
+            reviewmodels = try context.fetch(request)
             DispatchQueue.main.async {
                 self.reviews.reloadData()
             }

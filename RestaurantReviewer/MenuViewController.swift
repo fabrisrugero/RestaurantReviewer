@@ -10,6 +10,7 @@ import UIKit
 class MenuViewController: UIViewController {
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var signOutBtn: UIButton!
+    @IBOutlet weak var aboutBtn: UIButton!
     @IBOutlet weak var deleteReviewBtn: UIButton!
     @IBOutlet weak var createReviewBtn: UIButton!
     @IBOutlet weak var passwordTxb: UITextField!
@@ -32,7 +33,11 @@ class MenuViewController: UIViewController {
         performSegue(withIdentifier: "createForm", sender: self)
     }
     
+    @IBAction func aboutMeClick(_ sender: UIButton) {
+        performSegue(withIdentifier: "aboutMe", sender: self)
+    }
     func signedOut(signedIn: Bool) {
+        aboutBtn.isHidden = signedIn
         signInBtn.isHidden = signedIn
         signOutBtn.isHidden = !signedIn
         passwordTxb.isHidden = signedIn
@@ -46,8 +51,8 @@ class MenuViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ReviewFormController{
-            destination.unwindSaveSegue = "saveCreate"
             destination.unwindCancelSegue = "cancelCreate"
+            destination.unwindSaveSegue = "saveCreate"
         }
     }
 
